@@ -33,6 +33,16 @@ class GameBoard:
         return count
 
     def next_state(self):
+        next_board = self.__next_board_without_extending()
+
+        top_changed, top = self.__top_extension()
+
+        if top_changed:
+            next_board.insert(0, top)
+
+        return GameBoard(next_board)
+
+    def __next_board_without_extending(self):
         next_board = []
         for y in range(len(self.board)):
             next_board.append([])
@@ -49,7 +59,9 @@ class GameBoard:
                     next_board[y].append(False)
                 else:
                     next_board[y].append(False)
+        return next_board
 
+    def __top_extension(self):
         top_changed = False
         top = []
         for x in range(0, len(self.board)):
@@ -61,7 +73,4 @@ class GameBoard:
             else:
                 top.append(False)
 
-        if top_changed:
-            next_board.insert(0, top)
-
-        return GameBoard(next_board)
+        return top_changed, top
