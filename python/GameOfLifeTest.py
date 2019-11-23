@@ -66,5 +66,13 @@ class GameOfLifeTest(unittest.TestCase):
 
         self.assertTrue(actual)
 
+    def test_an_alive_cell_with_8_neighbours_dies(self):
+        cell_status = True
+        alive_neighbours = 8
+
+        actual = OverpopulationRule(cell_status, alive_neighbours).applies()
+
+        self.assertTrue(actual)
+
 if __name__ == "__main__":
     unittest.main()
