@@ -18,4 +18,6 @@ class SurvivalRule:
     def applies(self):
         if self.cell_status == True and self.alive_neighbours == 2:
             return True
+        if self.cell_status == True and self.alive_neighbours == 3:
+            return True
         return False

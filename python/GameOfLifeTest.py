@@ -30,6 +30,14 @@ class GameOfLifeTest(unittest.TestCase):
 
         self.assertTrue(actual)
 
+    def test_an_alive_cell_with_3_neighbours_stays_alive(self):
+        alive_neighbours = 3
+        cell_status = True
+
+        actual = SurvivalRule(cell_status, alive_neighbours).applies()
+
+        self.assertTrue(actual)
+
 
 if __name__ == "__main__":
     unittest.main()
