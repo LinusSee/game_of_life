@@ -41,4 +41,6 @@ class OverpopulationRule:
     def applies(self):
         if self.cell_status == True and self.alive_neighbours == 4:
             return True
+        if self.cell_status == True and self.alive_neighbours == 6:
+            return True
         return False
