@@ -6,4 +6,6 @@ class PopulationRule:
     def applies(self):
         if self.cell_status == True and self.alive_neighbours == 0:
             return True
+        elif self.cell_status == True and self.alive_neighbours == 1:
+            return True
         return False
