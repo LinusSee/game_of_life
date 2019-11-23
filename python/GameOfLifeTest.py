@@ -3,6 +3,7 @@ import unittest
 from src.Rules import PopulationRule
 from src.Rules import SurvivalRule
 from src.Rules import RevivalRule
+from src.Rules import OverpopulationRule
 
 
 class GameOfLifeTest(unittest.TestCase):
@@ -39,11 +40,21 @@ class GameOfLifeTest(unittest.TestCase):
 
         self.assertTrue(actual)
 
+
     def test_a_dead_cell_with_exactely_3_neighbours_becomes_alive(self):
         cell_status = False
         alive_neighbours = 3
 
         actual = RevivalRule(cell_status, alive_neighbours).applies()
+
+        self.assertTrue(actual)
+
+
+    def test_an_alive_cell_with_4_neighbours_dies(self):
+        cell_status = True
+        alive_neighbours = 4
+
+        actual = OverpopulationRule(cell_status, alive_neighbours).applies()
 
         self.assertTrue(actual)
 
