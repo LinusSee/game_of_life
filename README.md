@@ -32,4 +32,7 @@ Also I try to implement this problem as object oriented as possible, which might
   - Case2: The board correctly counts the alive neighbours around the bottom right cell
   - Case3: The board correctly counts the alive neighbours around a cell that is not at an edge
   - Case4: The board correctly applies all rules to transition between states (Create several test cases)
-  - Case5: The board extends if a cell outside of it's bounds is brought to life (infinitely large board)
+  - Case5: The board extends upwards if a cell is brought to life on it's top (infinitely large board)
+  - Case6: The board extends to the left if a cell is brought to life on it's top (infinitely large board)
+  - Case7: The board extends to the right if a cell is brought to life on it's top (infinitely large board)
+  - Case8: The board extends downwards if a cell is brought to life on it's top (infinitely large board)
