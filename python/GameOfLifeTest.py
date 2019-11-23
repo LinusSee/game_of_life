@@ -145,6 +145,23 @@ class GameOfLifeTest(unittest.TestCase):
         self.assertEqual(actual_len_x, expected_len_x)
         self.assertTrue(actual[0][1])
 
+    def test_the_board_extends_rightwards_if_a_cell_is_brought_to_life_on_its_right(self):
+        board = [
+            [ True, False, True ],
+            [ False, False, True ],
+            [ True, False, True ]
+        ]
+
+        actual = GameOfLife(board).board().next_state().board
+        actual_len_y = len(actual)
+        actual_len_x = len(actual[0])
+        expected_len_y = 3
+        expected_len_x = 4
+
+        self.assertEqual(actual_len_y, expected_len_y)
+        self.assertEqual(actual_len_x, expected_len_x)
+        self.assertTrue(actual[0][1])
+
 
 if __name__ == "__main__":
     unittest.main()
