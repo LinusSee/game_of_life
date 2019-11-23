@@ -23,6 +23,22 @@ class RulesTest(unittest.TestCase):
 
         self.assertTrue(actual)
 
+    def test_a_dead_cell_with_0_neighbours_remains_dead(self):
+        cell_status = False
+        alive_neighbours = 0
+
+        actual = PopulationRule(cell_status, alive_neighbours).applies()
+
+        self.assertTrue(actual)
+
+    def test_a_dead_cell_with_1_neighbour_remains_dead(self):
+        cell_status = False
+        alive_neighbours = 1
+
+        actual = PopulationRule(cell_status, alive_neighbours).applies()
+
+        self.assertTrue(actual)
+
 
     def test_an_alive_cell_with_2_neighbours_stays_alive(self):
         cell_status = True
@@ -69,6 +85,22 @@ class RulesTest(unittest.TestCase):
     def test_an_alive_cell_with_8_neighbours_dies(self):
         cell_status = True
         alive_neighbours = 8
+
+        actual = OverpopulationRule(cell_status, alive_neighbours).applies()
+
+        self.assertTrue(actual)
+
+    def test_a_dead_cell_with_4_neighbours_remains_dead(self):
+        cell_status = False
+        alive_neighbours = 4
+
+        actual = OverpopulationRule(cell_status, alive_neighbours).applies()
+
+        self.assertTrue(actual)
+
+    def test_a_dead_cell_with_8_neighbours_remains_dead(self):
+        cell_status = False
+        alive_neighbours = 4
 
         actual = OverpopulationRule(cell_status, alive_neighbours).applies()
 
