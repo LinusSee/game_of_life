@@ -10,22 +10,35 @@ Also I try to implement this problem as object oriented as possible, which might
 
 
 ## Test list
-- Underpopulation: An alive cell with < 2 neighbours dies
+- Underpopulation: An cell with < 2 neighbours will be dead
   - Case1: An alive cell with 0 neighbours dies
   - Case2: An alive cell with 1 neighbour dies
+  - Case3: A dead cell with 0 neighbours remains dead
+  - Case4: A dead cell with 1 neighbour remains dead
 - Survival: An alive cell with 2 or 3 neighbours stays alive
   - Case1: An alive cell with 2 neighbours stays alive
   - Case2: An alive cell with 3 neighbours stays alive
 - Revival: A dead cell with exactely 3 neighbours will become alive
   - Case1: A dead cell with exactely 3 neighbours will become alive
-- Overpopulation: An alive cell with > 3 alive neighbours dies
+- Overpopulation: An cell with > 3 alive neighbours will be dead
   - Case1: An alive cell with 4 neighbours dies
   - Case2: An alive cell with 6 neighbours dies
   - Case3: An alive cell with 8 neighbours dies
+  - Case4: A dead cell with 4 neighbours remains dead
+  - Case5: A dead cell with 8 neighbours remains dead
   
 - Board: 
   - Case1: The board correctly counts the alive neighbours around the upper left cell
   - Case2: The board correctly counts the alive neighbours around the bottom right cell
   - Case3: The board correctly counts the alive neighbours around a cell that is not at an edge
   - Case4: The board correctly applies all rules to transition between states (Create several test cases)
-  - Case5: The board extends if a cell outside of it's bounds is brought to life (infinitely large board)
+  - Case5: The board extends upwards if a cell is brought to life on its top (infinitely large board)
+  - Case6: The board extends to the left if a cell is brought to life on its left (infinitely large board)
+  - Case7: The board extends to the right if a cell is brought to life on its right (infinitely large board)
+  - Case8: The board extends downwards if a cell is brought to life on its bot (infinitely large board)
+  - Case9: The board extends top and right if a cell is brought to life on both sides
+  - Case10: The board extends bot and right if a cell is brought to life on both sides
+  - Case11: The board extends bot and top if a cell is brought to life on both sides
+  - Case 12: The board extends left and right if a cell is brought to life on both sides
+  - Case 13: The board extends left and top if a cell is brought to life on both sides
+  - Case 14: The board extends left and bot if a cell is brought to life on both sides
