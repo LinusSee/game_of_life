@@ -2,6 +2,7 @@ import unittest
 
 from src.Rules import PopulationRule
 from src.Rules import SurvivalRule
+from src.Rules import RevivalRule
 
 
 class GameOfLifeTest(unittest.TestCase):
@@ -38,6 +39,13 @@ class GameOfLifeTest(unittest.TestCase):
 
         self.assertTrue(actual)
 
+    def test_a_dead_cell_with_exactely_3_neighbours_becomes_alive(self):
+        cell_status = False
+        alive_neighbours = 3
+
+        actual = RevivalRule(cell_status, alive_neighbours).applies()
+
+        self.assertTrue(actual)
 
 if __name__ == "__main__":
     unittest.main()
