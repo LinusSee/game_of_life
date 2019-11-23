@@ -37,8 +37,8 @@ Also I try to implement this problem as object oriented as possible, which might
   - Case7: The board extends to the right if a cell is brought to life on its right (infinitely large board)
   - Case8: The board extends downwards if a cell is brought to life on its bot (infinitely large board)
   - Case9: The board extends top and right if a cell is brought to life on both sides
-  - Case9: The board extends bot and right if a cell is brought to life on both sides
-  - Case10: The board extends bot and top if a cell is brought to life on both sides
-  - Case 11: The board extends left and right if a cell is brought to life on both sides
-  - Case 12: The board extends left and top if a cell is brought to life on both sides
-  - Case 13: The board extends left and bot if a cell is brought to life on both sides
+  - Case10: The board extends bot and right if a cell is brought to life on both sides
+  - Case11: The board extends bot and top if a cell is brought to life on both sides
+  - Case 12: The board extends left and right if a cell is brought to life on both sides
+  - Case 13: The board extends left and top if a cell is brought to life on both sides
+  - Case 14: The board extends left and bot if a cell is brought to life on both sides
