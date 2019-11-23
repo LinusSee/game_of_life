@@ -38,6 +38,6 @@ class OverpopulationRule:
         self.alive_neighbours = alive_neighbours
 
     def applies(self):
-        if self.cell_status == True and self.alive_neighbours > 3:
+        if self.alive_neighbours > 3:
             return True
         return False
