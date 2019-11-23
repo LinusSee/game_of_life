@@ -22,3 +22,10 @@ Also I try to implement this problem as object oriented as possible, which might
   - Case1: An alive cell with 4 neighbours dies
   - Case2: An alive cell with 6 neighbours dies
   - Case3: An alive cell with 8 neighbours dies
+  
+- Board: 
+  - Case1: The board correctly counts the alive neighbours around the upper left cell
+  - Case2: The board correctly counts the alive neighbours around the bottom right cell
+  - Case3: The board correctly counts the alive neighbours around a cell that is not at an edge
+  - Case4: The board correctly applies all rules to transition between states (Create several test cases)
+  - Case5: The board extends if a cell outside of it's bounds is brought to life (infinitely large board)
