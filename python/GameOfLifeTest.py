@@ -34,6 +34,21 @@ class GameOfLifeTest(unittest.TestCase):
 
         self.assertEqual(actual, expected)
 
+    def test_the_board_correctly_counts_the_alive_neighbours_around_a_cell_that_is_not_at_an_edge(self):
+        board = [
+            [ True, True, False, False ],
+            [ False, True, False, True ],
+            [ True, True, True, False ],
+            [ True, False, False, False ]
+        ]
+        x_pos = 1
+        y_pos = 1
+
+        actual = GameOfLife(board).board().alive_neighbours(x_pos, y_pos)
+        expected = 5
+
+        self.assertEqual(actual, expected)
+
 
 if __name__ == "__main__":
     unittest.main()
