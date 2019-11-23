@@ -91,7 +91,7 @@ class GameOfLifeTest(unittest.TestCase):
         actual = GameOfLife(board).board().alive_neighbours(x_pos, y_pos)
         expected = 2
 
-        self.assertEquals(actual, expected)
+        self.assertEqual(actual, expected)
 
     def test_the_board_correctly_counts_the_alive_neighbours_around_the_bottom_right_cell(self):
         board = [
@@ -106,7 +106,7 @@ class GameOfLifeTest(unittest.TestCase):
         actual = GameOfLife(board).board().alive_neighbours(x_pos, y_pos)
         expected = 1
 
-        self.assertEquals(actual, expected)
+        self.assertEqual(actual, expected)
 
 
 if __name__ == "__main__":
