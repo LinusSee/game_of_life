@@ -27,8 +27,10 @@ class GameBoard:
             for x in range(start_x, end_x + 1):
                 if self.board[y][x] == True:
                     count += 1
-        if self.board[y_pos][x_pos] == True:
-            count -= 1
+
+        if start_x <= x_pos <= end_x and start_y <= y_pos <= end_y:
+            if self.board[y_pos][x_pos] == True:
+                count -= 1
 
         return count
 
@@ -36,9 +38,14 @@ class GameBoard:
         next_board = self.__next_board_without_extending()
 
         top_changed, top = self.__top_extension()
+        left_changed, left = self.__left_extension()
 
         if top_changed:
             next_board.insert(0, top)
+
+        if left_changed:
+            for y, status in enumerate(left):
+                next_board[y].insert(0, status)
 
         return GameBoard(next_board)
 
@@ -66,7 +73,7 @@ class GameBoard:
         top = []
         for x in range(0, len(self.board)):
             cell_status = False
-            alive_neighbours = self.alive_neighbours(x, 0)
+            alive_neighbours = self.alive_neighbours(x, -1)
             if RevivalRule(cell_status, alive_neighbours).applies():
                 top.append(True)
                 top_changed = True
@@ -74,3 +81,17 @@ class GameBoard:
                 top.append(False)
 
         return top_changed, top
+
+    def __left_extension(self):
+        left_changed = False
+        left = []
+        for y in range(0, len(self.board)):
+            cell_status = False
+            alive_neighbours = self.alive_neighbours(-1, y)
+            if RevivalRule(cell_status, alive_neighbours).applies():
+                left.append(True)
+                left_changed = True
+            else:
+                left.append(False)
+
+        return left_changed, left
