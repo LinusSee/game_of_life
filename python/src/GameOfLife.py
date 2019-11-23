@@ -49,5 +49,19 @@ class GameBoard:
                     next_board[y].append(False)
                 else:
                     next_board[y].append(False)
-                    #assert 1 == 2, "This case should not be able to occur (Cell status: {}, Alive neighbours: {})".format(cell_status, alive_neighbours)
+
+        top_changed = False
+        top = []
+        for x in range(0, len(self.board)):
+            cell_status = False
+            alive_neighbours = self.alive_neighbours(x, 0)
+            if RevivalRule(cell_status, alive_neighbours).applies():
+                top.append(True)
+                top_changed = True
+            else:
+                top.append(False)
+
+        if top_changed:
+            next_board.insert(0, top)
+
         return GameBoard(next_board)
