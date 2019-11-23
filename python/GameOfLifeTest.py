@@ -6,16 +6,16 @@ from src.Rules import SurvivalRule
 
 class GameOfLifeTest(unittest.TestCase):
     def test_an_alive_cell_with_0_neighbours_dies(self):
-        alive_neighbours = 0
         cell_status = True
+        alive_neighbours = 0
 
         actual = PopulationRule(cell_status, alive_neighbours).applies()
 
         self.assertTrue(actual)
 
     def test_an_alive_cell_with_1_neighbour_dies(self):
-        alive_neighbours = 1
         cell_status = True
+        alive_neighbours = 1
 
         actual = PopulationRule(cell_status, alive_neighbours).applies()
 
@@ -23,16 +23,16 @@ class GameOfLifeTest(unittest.TestCase):
 
 
     def test_an_alive_cell_with_2_neighbours_stays_alive(self):
-        alive_neighbours = 2
         cell_status = True
+        alive_neighbours = 2
 
         actual = SurvivalRule(cell_status, alive_neighbours).applies()
 
         self.assertTrue(actual)
 
     def test_an_alive_cell_with_3_neighbours_stays_alive(self):
-        alive_neighbours = 3
         cell_status = True
+        alive_neighbours = 3
 
         actual = SurvivalRule(cell_status, alive_neighbours).applies()
 
