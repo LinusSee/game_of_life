@@ -18,5 +18,18 @@ class GameOfLifeTest(unittest.TestCase):
         self.assertEqual(actual, expected)
 
 
+    def test_game_returns_the_correct_board_after_running_an_iteration(self):
+        board = [
+            [ True, True, False ],
+            [ False, True, True ],
+            [ False, True, False ]
+        ]
+
+        actual = GameOfLife(board).run().board().board
+        expected = GameBoard(board).next_state().board
+
+        self.assertEqual(actual, expected)
+
+
 if __name__ == "__main__":
     unittest.main()

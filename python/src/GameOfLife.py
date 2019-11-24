@@ -11,6 +11,15 @@ class GameOfLife:
     def board(self):
         return self.__board
 
+    def run(self):
+        self.__board = self.__board.next_state()
+        return self
+
+    def run_for(self, iterations=1):
+        for iteration in range(iterations):
+            self.run()
+        return self
+
 
 class GameBoard:
     def __init__(self, initial_board):
