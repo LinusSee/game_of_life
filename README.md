@@ -49,6 +49,8 @@ Also I try to implement this problem as object oriented as possible, which might
   - Case 19: The board extends on all sides if a cell is brought to life on all sides
 
 - GameOfLife:
-  - Case1: The game returns the correct board, i.e. the state
-  - Case2: When running an iteration, the returned board equals the next state
-  - Case3: When running multiple iterations, the returned board equals the next state
+  - Case1: The game returns the correct board, i.e. the state, after creation
+  - Case2: The game returns the correct board after running an iteration
+  - Case3: The game returns the correct board after running 10 iterations
+  - Case4: The game returns the correct board after running 100 iterations
+  - Case5: The game returns the correct board after running 1000 iterations
