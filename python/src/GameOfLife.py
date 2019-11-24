@@ -56,6 +56,7 @@ class GameBoard:
                 next_board[y].insert(len(next_board[y]), status)
 
         if down_changed:
+            down = down + [ False ] if right_changed else down
             next_board.insert(len(next_board), down)
 
         return GameBoard(next_board)
