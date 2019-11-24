@@ -1,6 +1,6 @@
 import unittest
 
-from src.GameOfLife import GameOfLife
+from src.GameOfLife import GameBoard
 
 transition_examples = [
     ([
@@ -70,7 +70,7 @@ class GameBoardTest(unittest.TestCase):
         x_pos = 0
         y_pos = 0
 
-        actual = GameOfLife(board).board().alive_neighbours(x_pos, y_pos)
+        actual = GameBoard(board).alive_neighbours(x_pos, y_pos)
         expected = 2
 
         self.assertEqual(actual, expected)
@@ -85,7 +85,7 @@ class GameBoardTest(unittest.TestCase):
         x_pos = 3
         y_pos = 3
 
-        actual = GameOfLife(board).board().alive_neighbours(x_pos, y_pos)
+        actual = GameBoard(board).alive_neighbours(x_pos, y_pos)
         expected = 1
 
         self.assertEqual(actual, expected)
@@ -100,14 +100,14 @@ class GameBoardTest(unittest.TestCase):
         x_pos = 1
         y_pos = 1
 
-        actual = GameOfLife(board).board().alive_neighbours(x_pos, y_pos)
+        actual = GameBoard(board).alive_neighbours(x_pos, y_pos)
         expected = 5
 
         self.assertEqual(actual, expected)
 
     def test_the_board_correctly_applies_all_rules_when_transitioning_between_states(self):
         for board, expected in transition_examples:
-            actual = GameOfLife(board).board().next_state().board
+            actual = GameBoard(board).next_state().board
 
             self.assertEqual(actual, expected)
 
@@ -118,7 +118,7 @@ class GameBoardTest(unittest.TestCase):
             [ False, False, False ]
         ]
 
-        actual = GameOfLife(board).board().next_state().board
+        actual = GameBoard(board).next_state().board
         expected = [
             [ False, True, False ],
             [ True, True, False ],
@@ -136,7 +136,7 @@ class GameBoardTest(unittest.TestCase):
             [ True, False, False ]
         ]
 
-        actual = GameOfLife(board).board().next_state().board
+        actual = GameBoard(board).next_state().board
         expected = [
             [ False, True, True, False ],
             [ True, True, False, False ],
@@ -153,7 +153,7 @@ class GameBoardTest(unittest.TestCase):
             [ True, False, True ]
         ]
 
-        actual = GameOfLife(board).board().next_state().board
+        actual = GameBoard(board).next_state().board
         expected = [
             [ False, False, True, False ],
             [ True, False, True, True ],
@@ -170,7 +170,7 @@ class GameBoardTest(unittest.TestCase):
             [ True, True, True ]
         ]
 
-        actual = GameOfLife(board).board().next_state().board
+        actual = GameBoard(board).next_state().board
         expected = [
             [ False, True, False ],
             [ False, False, False ],
@@ -188,7 +188,7 @@ class GameBoardTest(unittest.TestCase):
             [ True, False, True ]
         ]
 
-        actual = GameOfLife(board).board().next_state().board
+        actual = GameBoard(board).next_state().board
         expected = [
             [ False, True, False, False ],
             [ False, True, True, False ],
@@ -205,7 +205,7 @@ class GameBoardTest(unittest.TestCase):
             [ True, True, True ]
         ]
 
-        actual = GameOfLife(board).board().next_state().board
+        actual = GameBoard(board).next_state().board
         expected = [
             [ False, True, False, False ],
             [ True, False, True, True ],
@@ -222,7 +222,7 @@ class GameBoardTest(unittest.TestCase):
             [ True, True, True ]
         ]
 
-        actual = GameOfLife(board).board().next_state().board
+        actual = GameBoard(board).next_state().board
         expected = [
             [ False, True, False],
             [ True, True, True ],
@@ -240,7 +240,7 @@ class GameBoardTest(unittest.TestCase):
             [ True, False, True ]
         ]
 
-        actual = GameOfLife(board).board().next_state().board
+        actual = GameBoard(board).next_state().board
         expected = [
             [ False, True, False, True, False ],
             [ True, True, False, True, True ],
@@ -256,7 +256,7 @@ class GameBoardTest(unittest.TestCase):
             [ True, False, True ]
         ]
 
-        actual = GameOfLife(board).board().next_state().board
+        actual = GameBoard(board).next_state().board
         expected = [
             [ False, False, True, False ],
             [ False, True, True, False ],
@@ -273,7 +273,7 @@ class GameBoardTest(unittest.TestCase):
             [ True, True, True ]
         ]
 
-        actual = GameOfLife(board).board().next_state().board
+        actual = GameBoard(board).next_state().board
         expected = [
             [ False, False, True, False ],
             [ True, True, False, True ],
@@ -290,7 +290,7 @@ class GameBoardTest(unittest.TestCase):
             [ True, False, True ]
         ]
 
-        actual = GameOfLife(board).board().next_state().board
+        actual = GameBoard(board).next_state().board
         expected = [
             [ False, False, True, False, False ],
             [ False, True, False, True, False ],
@@ -308,7 +308,7 @@ class GameBoardTest(unittest.TestCase):
             [ True, True, True ]
         ]
 
-        actual = GameOfLife(board).board().next_state().board
+        actual = GameBoard(board).next_state().board
         expected = [
             [ False, False, False, False, False ],
             [ True, True, False, True, True ],
@@ -326,7 +326,7 @@ class GameBoardTest(unittest.TestCase):
             [ True, True, True ]
         ]
 
-        actual = GameOfLife(board).board().next_state().board
+        actual = GameBoard(board).next_state().board
         expected = [
             [ False, False, True, False ],
             [ False, True, True, False ],
@@ -344,7 +344,7 @@ class GameBoardTest(unittest.TestCase):
             [ True, True, True ]
         ]
 
-        actual = GameOfLife(board).board().next_state().board
+        actual = GameBoard(board).next_state().board
         expected = [
             [ False, True, False, False ],
             [ False, True, True, False ],
@@ -362,7 +362,7 @@ class GameBoardTest(unittest.TestCase):
             [ True, True, True ]
         ]
 
-        actual = GameOfLife(board).board().next_state().board
+        actual = GameBoard(board).next_state().board
         expected = [
             [ False, False, True, False, False ],
             [ False, True, False, True, False ],
