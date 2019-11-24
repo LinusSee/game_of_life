@@ -42,10 +42,12 @@ class GameBoard:
         right_changed, right = self.__right_extension()
         down_changed, down = self.__down_extension()
 
+
         if top_changed:
             next_board.insert(0, top)
 
         if left_changed:
+            left = [ False ] + left if top_changed else left
             for y, status in enumerate(left):
                 next_board[y].insert(0, status)
 
