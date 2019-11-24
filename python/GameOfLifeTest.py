@@ -283,5 +283,26 @@ class GameOfLifeTest(unittest.TestCase):
 
         self.assertEqual(actual, expected)
 
+    def test_the_board_extends_left_right_and_top_if_a_cell_is_brought_to_life_on_those_sides(self):
+        board = [
+            [ True, True, True ],
+            [ True, False, True ],
+            [ True, False, True ]
+        ]
+
+        actual = GameOfLife(board).board().next_state().board
+        expected = [
+            [ False, False, True, False, False ],
+            [ False, True, False, True, False ],
+            [ True, True, False, True, True ],
+            [ False, False, False, False, False ]
+        ]
+
+        self.assertEqual(actual, expected)
+
+
+
+
+
 if __name__ == "__main__":
     unittest.main()
