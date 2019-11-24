@@ -42,3 +42,8 @@ Also I try to implement this problem as object oriented as possible, which might
   - Case 12: The board extends left and right if a cell is brought to life on both sides
   - Case 13: The board extends left and top if a cell is brought to life on both sides
   - Case 14: The board extends left and bot if a cell is brought to life on both sides
+  - Case 15: The board extends left, right and top if a cell is brought to life on those sides
+  - Case 16: The board extends left, right and bot if a cell is brought to life on those sides
+  - Case 17: The board extends left, bot and top if a cell is brought to life on those sides
+  - Case 18: The board extends right, bot and top if a cell is brought to life on those sides
+  - Case 19: The board extends on all sides if a cell is brought to life on all sides
