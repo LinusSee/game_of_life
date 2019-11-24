@@ -50,5 +50,5 @@ Also I try to implement this problem as object oriented as possible, which might
 
 - GameOfLife:
   - Case1: The game returns the correct board, i.e. the state, after creation
-  - Case2: When running an iteration, the returned board equals the next state
-  - Case3: When running multiple iterations, the returned board equals the next state
+  - Case2: The game returns the correct board after running an iteration
+  - Case3: The game returns the correct board after running multiple iterations
