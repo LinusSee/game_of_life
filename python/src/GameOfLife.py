@@ -51,12 +51,12 @@ class GameBoard:
 
         if right_changed:
             right = [False] + right if top_changed else right
-            
+
             for y, status in enumerate(right):
                 next_board[y].insert(len(next_board[y]), status)
 
         if down_changed:
-            next_board.insert(len(self.board) - 1, down)
+            next_board.insert(len(next_board), down)
 
         return GameBoard(next_board)
 
