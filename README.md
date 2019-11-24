@@ -47,3 +47,8 @@ Also I try to implement this problem as object oriented as possible, which might
   - Case 17: The board extends left, bot and top if a cell is brought to life on those sides
   - Case 18: The board extends right, bot and top if a cell is brought to life on those sides
   - Case 19: The board extends on all sides if a cell is brought to life on all sides
+
+- GameOfLife:
+  - Case1: The game returns the correct board, i.e. the state
+  - Case2: When running an iteration, the returned board equals the next state
+  - Case3: When running multiple iterations, the returned board equals the next state
