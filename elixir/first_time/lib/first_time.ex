@@ -1,18 +1,13 @@
-defmodule FirstTime do
+defmodule GameRules do
   @moduledoc """
-  Documentation for FirstTime.
+  Documentation for GameRules.
   """
 
-  @doc """
-  Hello world.
+  def dies?(:alive, 0), do: true
 
-  ## Examples
 
-      iex> FirstTime.hello()
-      :world
 
-  """
-  def hello do
-    :world
-  end
+  # def dies?(:alive, 0) do
+  #   true
+  # end
 end
