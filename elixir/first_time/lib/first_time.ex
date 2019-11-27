@@ -3,8 +3,9 @@ defmodule GameRules do
   Documentation for GameRules.
   """
 
-  def dies?(:alive, 0), do: true
-  def dies?(:alive, 1), do: true
+  def dies?(:alive, alive_neighbours) when alive_neighbours < 2 do
+    true
+  end
 
 
 
