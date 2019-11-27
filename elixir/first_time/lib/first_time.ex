@@ -4,6 +4,7 @@ defmodule GameRules do
   """
 
   def dies?(:alive, 0), do: true
+  def dies?(:alive, 1), do: true
 
 
 
