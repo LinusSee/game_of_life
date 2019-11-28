@@ -35,4 +35,10 @@ defmodule GameRulesTest do
       refute GameRules.dies?(:dead, 3)
     end
   end
+
+  describe "Overpopulation: a cell with > 3 neighbours will be dead" do
+    test "alive cell with 4 neighbours dies" do
+      assert GameRules.dies?(:alive, 4)
+    end
+  end
 end
