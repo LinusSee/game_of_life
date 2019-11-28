@@ -29,4 +29,10 @@ defmodule GameRulesTest do
       refute GameRules.dies?(:alive, 3)
     end
   end
+
+  describe "Revival: dead cell with exactely 3 neighbours comes alive" do
+    test "dead cell with exactely 3 neighbours comes alive" do
+      refute GameRules.dies?(:dead, 3)
+    end
+  end
 end
