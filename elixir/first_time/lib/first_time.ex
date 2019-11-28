@@ -10,6 +10,8 @@ defmodule GameRules do
     true
   end
 
+  def dies?(:dead, 4), do: true
+
   def dies?(_, _), do: false
 
 
