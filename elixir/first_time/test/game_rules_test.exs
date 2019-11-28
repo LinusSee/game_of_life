@@ -40,5 +40,9 @@ defmodule GameRulesTest do
     test "alive cell with 4 neighbours dies" do
       assert GameRules.dies?(:alive, 4)
     end
+
+    test "alive cell with 6 neighbours dies" do
+      assert GameRules.dies?(:alive, 6)
+    end
   end
 end

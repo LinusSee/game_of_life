@@ -6,7 +6,9 @@ defmodule GameRules do
     true
   end
 
-  def dies?(:alive, 4), do: true
+  def dies?(:alive, alive_neighbours) when alive_neighbours > 3 do
+    true
+  end
 
   def dies?(_, _), do: false
 
