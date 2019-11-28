@@ -7,6 +7,10 @@ defmodule GameRules do
     true
   end
 
+  def dies?(:dead, 0) do
+    true
+  end
+
 
 
   # def dies?(:alive, 0) do
