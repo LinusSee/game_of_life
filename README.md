@@ -18,6 +18,7 @@ Also I try to implement this problem as object oriented as possible, which might
 - Survival: An alive cell with 2 or 3 neighbours stays alive
   - Case1: An alive cell with 2 neighbours stays alive
   - Case2: An alive cell with 3 neighbours stays alive
+  - Case1: A dead cell with 2 neighbours remains dead
 - Revival: A dead cell with exactely 3 neighbours will become alive
   - Case1: A dead cell with exactely 3 neighbours will become alive
 - Overpopulation: An cell with > 3 alive neighbours will be dead

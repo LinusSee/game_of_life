@@ -39,6 +39,13 @@ rulesSuite =
                             Rule.cellWillBeAlive True 3
                     in
                     Expect.equal True isAlive
+            , test "cell should remain dead with 2 neighbours" <|
+                \_ ->
+                    let
+                        isAlive =
+                            Rule.cellWillBeAlive False 2
+                    in
+                    Expect.equal False isAlive
             ]
         , describe "revival"
             [ test "cell should come alive with 3 neighbours" <|
