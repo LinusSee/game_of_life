@@ -24,4 +24,13 @@ rulesSuite =
                     in
                     Expect.equal False isAlive
             ]
+        , describe "survival"
+            [ test "cell should survive with 2 neighbours" <|
+                \_ ->
+                    let
+                        isAlive =
+                            Rule.cellWillBeAlive 2
+                    in
+                    Expect.equal True isAlive
+            ]
         ]
