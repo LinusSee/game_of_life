@@ -13,14 +13,14 @@ rulesSuite =
                 \_ ->
                     let
                         isAlive =
-                            Rule.cellWillBeAlive 0
+                            Rule.cellWillBeAlive True 0
                     in
                     Expect.equal False isAlive
             , test "cell should die with 1 neighbour" <|
                 \_ ->
                     let
                         isAlive =
-                            Rule.cellWillBeAlive 1
+                            Rule.cellWillBeAlive True 1
                     in
                     Expect.equal False isAlive
             ]
@@ -29,14 +29,23 @@ rulesSuite =
                 \_ ->
                     let
                         isAlive =
-                            Rule.cellWillBeAlive 2
+                            Rule.cellWillBeAlive True 2
                     in
                     Expect.equal True isAlive
             , test "cell should survive with 3 neighbours" <|
                 \_ ->
                     let
                         isAlive =
-                            Rule.cellWillBeAlive 3
+                            Rule.cellWillBeAlive True 3
+                    in
+                    Expect.equal True isAlive
+            ]
+        , describe "revival"
+            [ test "cell should come alive with 3 neighbours" <|
+                \_ ->
+                    let
+                        isAlive =
+                            Rule.cellWillBeAlive False 3
                     in
                     Expect.equal True isAlive
             ]
