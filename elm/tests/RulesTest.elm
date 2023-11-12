@@ -61,6 +61,23 @@ rulesSuite =
                     in
                     Expect.equal False isAlive
             ]
+        , describe "overpopulation"
+            [ test "cell should die with more than 3 neighbours" <|
+                \_ ->
+                    let
+                        scenarios =
+                            [ { isAlive = True, neighbours = 4 } ]
+
+                        checkIsAlive =
+                            \{ isAlive, neighbours } -> Rule.cellWillBeAlive isAlive neighbours
+                    in
+                    False
+                        |> Expect.all
+                            (scenarios
+                                |> List.map checkIsAlive
+                                |> List.map Expect.equal
+                            )
+            ]
         , describe "revival"
             [ test "cell should come alive with 3 neighbours" <|
                 \_ ->
